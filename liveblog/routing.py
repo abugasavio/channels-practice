@@ -12,6 +12,6 @@ channel_routing = [
     route('websocket.connect', connect_blog, path=r'/liveblog/(?P<slug>[^/]+)/stream/$'),
 
     # called when the client closes the socket
-    route('websocket.disconnet', disconnect_blog, path=r'^/liveblog/(?P<slug>[^/]+/stream/$'),
+    route('websocket.disconnet', disconnect_blog, path=r'^/liveblog/(?P<slug>[^/]+)/stream/$'),
 
 ]

@@ -2,4 +2,7 @@
 
 db.sqlite3
 
+# leave out dev settings file
+dev.py
+
 

@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def livetweets(request):
+
+    return render(request, "livetweets.html")
+

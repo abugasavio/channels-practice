@@ -1,5 +1,4 @@
 from channels import route
-from posts.consumers import connect_blog, disconnect_blog
 from livetweets.consumers import connect_tweeter, disconnect_tweeter
 
 # The channels routing defines what the channels get handled by what consumers,
@@ -9,12 +8,6 @@ from livetweets.consumers import connect_tweeter, disconnect_tweeter
 # same URL if we wanted; Daphne separates by protocol as it negotiates with a browser
 
 channel_routing = [
-    # called when incoming Websockets connect
-    route('websocket.connect', connect_blog, path=r'/liveblog/(?P<slug>[^/]+)/stream/$'),
-
-    # called when the client closes the socket
-    route('websocket.disconnet', disconnect_blog, path=r'^/liveblog/(?P<slug>[^/]+)/stream/$'),
-
     # called when incoming Websockets connect
     route('websocket.connect', connect_tweeter, path=r'/livetweets/stream/$'),
 
